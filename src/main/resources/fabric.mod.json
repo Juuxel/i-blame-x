@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "i-blame-x",
+  "version": "$version",
+  "name": "I Blame X",
+  "license": "GPL-3.0-only",
+  "authors": ["Juuz"],
+  "contact": {
+    "sources": "https://github.com/Juuxel/i-blame-x",
+    "issues": "https://github.com/Juuxel/i-blame-x/issues"
+  },
+  "mixins": ["mixins.i-blame-x.json"]
+}

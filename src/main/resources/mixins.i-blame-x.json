@@ -1,0 +1,8 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "juuxel.iblamex.mixin",
+  "mixins": [
+    "CrashReportMixin",
+    "CrashReportSectionMixin"
+  ]
+}
