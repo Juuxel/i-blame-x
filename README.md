@@ -7,5 +7,7 @@
 // I blame Adorn.
 ```
 
+[\[ Downloads \]](https://github.com/Juuxel/i-blame-x/releases)
+
 Adds a random mod name to the start of each crash report.
 Also adds a mod list to the "System Details" section.
