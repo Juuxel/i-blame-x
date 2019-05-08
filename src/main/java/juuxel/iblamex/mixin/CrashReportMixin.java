@@ -36,7 +36,7 @@ public class CrashReportMixin {
     }
 
     @Inject(method = "fillSystemDetails", at = @At(value = "INVOKE", ordinal = 1, target = "Lnet/minecraft/util/crash/CrashReportSection;add(Ljava/lang/String;Lnet/minecraft/util/crash/ICrashCallable;)V", shift = At.Shift.BEFORE))
-    private void onFillSystemDetailsAfterGameVersion(CallbackInfo info) {
+    private void onFillSystemDetails(CallbackInfo info) {
         systemDetailsSection.add(
                 "Mods",
                 i_blame_x$getMods().map(ModContainer::getMetadata)
