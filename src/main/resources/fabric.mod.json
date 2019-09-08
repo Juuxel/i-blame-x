@@ -6,6 +6,7 @@
   "description": "Adds a random mod name to the start of each crash report.",
   "license": "GPL-3.0-only",
   "authors": ["Juuz"],
+  "icon": "assets/i-blame-x/icon.png",
   "contact": {
     "sources": "https://github.com/Juuxel/i-blame-x",
     "issues": "https://github.com/Juuxel/i-blame-x/issues"

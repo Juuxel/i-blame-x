@@ -1,14 +1,14 @@
 plugins {
     java
     idea
-    id("fabric-loom") version "0.2.1-SNAPSHOT"
+    id("fabric-loom") version "0.2.5-SNAPSHOT"
 }
 
 base {
     archivesBaseName = "i-blame-x"
 }
 
-version = "1.0.0+1.14"
+version = "1.0.1+1.14.4"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -30,9 +30,9 @@ minecraft {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.14")
-    mappings("net.fabricmc:yarn:1.14+build.1")
+    minecraft("com.mojang:minecraft:1.14.4")
+    mappings("net.fabricmc:yarn:1.14.4+build.12")
 
     // Fabric
-    modCompile("net.fabricmc:fabric-loader:0.4.6+build.141")
+    modImplementation("net.fabricmc:fabric-loader:0.6.1+build.165")
 }

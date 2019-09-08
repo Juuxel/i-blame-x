@@ -35,14 +35,17 @@ public class CrashReportMixin {
                 .toArray(String[]::new);
     }
 
-    @Inject(method = "fillSystemDetails", at = @At(value = "INVOKE", ordinal = 1, target = "Lnet/minecraft/util/crash/CrashReportSection;add(Ljava/lang/String;Lnet/minecraft/util/crash/ICrashCallable;)V", shift = At.Shift.BEFORE))
+    @Inject(method = "fillSystemDetails", at = @At(value = "INVOKE", ordinal = 1, target = "Lnet/minecraft/util/crash/CrashReportSection;add(Ljava/lang/String;Lnet/minecraft/util/crash/CrashCallable;)Lnet/minecraft/util/crash/CrashReportSection;", shift = At.Shift.BEFORE))
     private void onFillSystemDetails(CallbackInfo info) {
-        systemDetailsSection.add(
-                "Mods",
-                i_blame_x$getMods().map(ModContainer::getMetadata)
-                        .map(meta -> String.format("%s@%s", meta.getId(), meta.getVersion()))
-                        .collect(Collectors.joining(", "))
-        );
+        if (!FabricLoader.getInstance().isModLoaded("fabric-crash-report-info-v1")) {
+            systemDetailsSection.add(
+                    "Mods",
+                    i_blame_x$getMods().map(ModContainer::getMetadata)
+                            .map(meta -> String.format("\n\t\t%s@%s", meta.getId(), meta.getVersion()))
+                            .sorted()
+                            .collect(Collectors.joining())
+            );
+        }
     }
 
     @Inject(method = "asString", at = @At("RETURN"), cancellable = true)
